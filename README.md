@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Test task in the company Ecommerce Empire
+
+Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Deploy link
+
+https://ee-test-task.vercel.app/
+
+## Used technologies
+
+1. [TypeScript](https://www.typescriptlang.org/)
+2. [React](https://legacy.reactjs.org/)
+3. [Material UI](https://mui.com/)
+4. [Axios](https://axios-http.com/docs/intro)
+5. [SampleApi](https://api.sampleapis.com/countries/countries)
 
 ## Available Scripts
 
