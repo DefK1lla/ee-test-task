@@ -1,0 +1,20 @@
+.mediaWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+}
+
+.media {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.id {
+  color: red;
+}
+
+.population {
+  font-weight: 700;
+}

@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import logo from './logo.svg'
 import './styles/App.scss'
 
 import ThemeSwitcher from './components/ThemeSwitcher'
@@ -12,6 +11,7 @@ import {
   Container,
 } from '@mui/material'
 import { ThemeContext } from './context/theme'
+import CountriesDataGrid from './components/CountriesDataGrid'
 
 function App() {
   const [mode] = useContext(ThemeContext)
@@ -30,6 +30,11 @@ function App() {
           <ThemeSwitcher />
         </Container>
       </AppBar>
+      <div className='pageWrapper'>
+        <Container>
+          <CountriesDataGrid />
+        </Container>
+      </div>
     </ThemeProvider>
   )
 }
