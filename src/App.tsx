@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react'
+import logo from './logo.svg'
+import './styles/App.scss'
+
+import ThemeSwitcher from './components/ThemeSwitcher'
+
+import {
+  ThemeProvider,
+  createTheme,
+  CssBaseline,
+  AppBar,
+  Container,
+} from '@mui/material'
+import { ThemeContext } from './context/theme'
 
 function App() {
+  const [mode] = useContext(ThemeContext)
+
+  const theme = createTheme({
+    palette: {
+      mode,
+    },
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppBar>
+        <Container>
+          <ThemeSwitcher />
+        </Container>
+      </AppBar>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
