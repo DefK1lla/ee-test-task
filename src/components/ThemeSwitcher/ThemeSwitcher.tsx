@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { ThemeContext } from '../../context/theme'
 
 const ThemeSwitcher = () => {
-  const [mode, setMode] = useContext(ThemeContext)
+  const [, setMode] = useContext(ThemeContext)
 
   return (
     <div className={s.wrapper}>

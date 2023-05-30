@@ -3,11 +3,13 @@ import {
   GridColDef,
   GridRenderCellParams,
   GridValueGetterParams,
+  useGridApiRef,
 } from '@mui/x-data-grid'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 import s from './countriesDataGrid.module.scss'
+import { useGirdPersist } from '../../hooks/useGridPersist'
 
 interface Country {
   abbreviation: string
@@ -82,6 +84,9 @@ const columns: GridColDef[] = [
 
 const CountriesDataGrid = () => {
   const [countries, setCountries] = useState<Country[]>([])
+  const apiRef = useGridApiRef()
+
+  useGirdPersist(apiRef, 'countries_grid_state')
 
   useEffect(() => {
     axios
@@ -104,6 +109,7 @@ const CountriesDataGrid = () => {
               },
             },
           }}
+          apiRef={apiRef}
         />
       ) : (
         'Error'
