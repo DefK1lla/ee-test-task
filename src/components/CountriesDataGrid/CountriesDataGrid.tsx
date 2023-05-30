@@ -49,11 +49,15 @@ const columns: GridColDef[] = [
     field: 'emblem',
     headerName: 'Emblem',
     sortable: false,
-    width: 100,
+    width: 150,
     valueGetter: (params: GridValueGetterParams<Country>) =>
       params.row.media.emblem,
-    renderCell: (params: GridRenderCellParams) => (
-      <img className={s.media} src={params.value} alt='emblem' />
+    renderCell: (params: GridRenderCellParams<Country>) => (
+      <img
+        className={s.media}
+        src={params.value}
+        alt={`${params.row.name} emblem`}
+      />
     ),
     cellClassName: s.mediaWrapper,
   },
@@ -61,11 +65,15 @@ const columns: GridColDef[] = [
     field: 'flag',
     headerName: 'Flag',
     sortable: false,
-    width: 100,
+    width: 150,
     valueGetter: (params: GridValueGetterParams<Country>) =>
       params.row.media.flag,
-    renderCell: (params: GridRenderCellParams) => (
-      <img className={s.media} src={params.value} alt='flag' />
+    renderCell: (params: GridRenderCellParams<Country>) => (
+      <img
+        className={s.media}
+        src={params.value}
+        alt={`${params.row.name} flag`}
+      />
     ),
     cellClassName: s.mediaWrapper,
   },
